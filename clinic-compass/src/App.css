@@ -1,6 +1,8 @@
 /* frontend/my-app/src/App.css */
 .App {
   text-align: center;
+  flex-direction: column;
+  ;
 }
 
 .App-header {
@@ -12,6 +14,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  height: 100%;
 }
 
 input {
@@ -21,13 +24,46 @@ input {
 }
 
 button {
-  padding: 0.5rem 1rem;
+  padding: .5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
+  margin-top: auto;
 }
 
 .response {
   margin-top: 1rem;
   font-size: 1.2rem;
 }
+
+/* frontend/my-app/src/App.css */
+
+.mobile-border {
+  width: 375px; /* Width of a typical mobile screen */
+  height: 667px; /* Height of a typical mobile screen */
+  border: 16px solid #000; /* Border width and color to resemble a phone */
+  border-radius: 36px; /* Rounded corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Shadow for a realistic effect */
+  margin: auto; /* Center the border in the viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white; /* Background color of the mobile screen */
+  overflow: hidden; /* Hide overflow to keep the mobile border clean */
+  position: relative;
+}
+
+.mobile-border::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 6px;
+  background: #000;
+  border-radius: 3px;
+}
+
+
 
