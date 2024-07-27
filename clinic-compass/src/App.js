@@ -1,6 +1,7 @@
 // frontend/my-app/src/App.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import './App.css';  // Import a CSS file for styling
 
 function App() {
   const [message, setMessage] = useState('');
@@ -12,23 +13,24 @@ function App() {
       const result = await axios.post('http://127.0.0.1:5000/chat', { message });
       setResponse(result.data.response);
     } catch (error) {
-      console.error('There was an error making the request:', error);
+      console.error('Error making request:', error);
     }
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Chat with HealthcareBot</h1>
+        <h1>901 Clinic Compass</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            placeholder="Ask me about clinics or health"
           />
           <button type="submit">Send</button>
         </form>
-        <p>{response}</p>
+        {response && <p className="response">{response}</p>}
       </header>
     </div>
   );
