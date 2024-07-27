@@ -13,7 +13,7 @@ function App() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const result = await axios.post('https://dashboard.render.com/web/srv-cqih6iaj1k6c739eqvc0/deploys/dep-cqih8q2j1k6c739es3qg', { message });
+      const result = await axios.post('https://clinc-comp.onrender.com/chat', { message });
       setResponse(result.data.response);
     } catch (error) {
       console.error('Error making request:', error);
